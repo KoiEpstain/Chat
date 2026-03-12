@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiwi Chat Premium ✨</title>
+    <title>Chat de los Hispanos 🌟</title>
     <style>
-        /* Diseño chido y moderno */
+        /* Estilo moderno y limpio */
         body, html { 
             margin: 0; padding: 0; height: 100%; width: 100%; 
-            font-family: 'Segoe UI', sans-serif; 
-            background: linear-gradient(135deg, #1d976c 0%, #93f9b9 100%); /* Fondo verde Kiwi */
-            display: flex; flex-direction: column; overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a; 
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Barra superior de Creadora */
-        header {
-            background: rgba(0, 0, 0, 0.8);
-            color: #93f9b9;
-            padding: 15px;
+        /* Barra de título chida */
+        .header-bar {
+            background: linear-gradient(90deg, #1d976c 0%, #11998e 100%);
+            color: white;
+            padding: 12px;
             text-align: center;
-            font-weight: bold;
             font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 10;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            z-index: 100;
         }
 
-        /* Contenedor del Chat */
-        #chat-wrapper {
+        /* Contenedor del chat */
+        #chat-container {
             flex: 1;
             width: 100%;
-            height: 100%;
-            position: relative;
+            background-color: #fff;
         }
 
         iframe {
@@ -39,58 +40,30 @@
             border: none;
         }
 
-        /* Lobby de bienvenida */
-        #lobby {
+        /* Mensaje de carga */
+        #loading {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: white;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            z-index: 20;
-            transition: opacity 0.5s ease;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: #1d976c;
+            font-weight: bold;
         }
-
-        .btn-entrar {
-            background: #1d976c;
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(29, 151, 108, 0.4);
-            transition: 0.3s;
-        }
-
-        .btn-entrar:hover { transform: scale(1.1); background: #167d58; }
     </style>
 </head>
 <body>
 
-<header>
-    🌟 BIENVENIDOS AL CHAT DE LOS HISPANOS 🌟
-</header>
-
-<div id="chat-wrapper">
-    <div id="lobby" id="lobby">
-        <h1 style="color: #1d976c;">🥝 Kiwi Social Club</h1>
-        <p>Conéctate, crea salas y chatea en privado.</p>
-        <button class="btn-entrar" onclick="entrarAlChat()">ENTRAR AL LOBBY</button>
+    <div class="header-bar">
+        🌟 BIENVENIDOS AL CHAT DE LOS HISPANOS 🌟
     </div>
 
-    <iframe id="kiwiFrame" src=""></iframe>
-</div>
-
-<script>
-    function entrarAlChat() {
-        // Ocultar el lobby
-        document.getElementById('lobby').style.display = 'none';
-        
-        // Cargar el servidor original de Kiwi (estable y con salas)
-        // Este link te conecta a la red oficial donde puedes crear tus propias salas
-        document.getElementById('kiwiFrame').src = "https://kiwiirc.com/nextclient/?settings=9a0994cc9e71f544528186177579f64e#lobby,#amistad,#ayuda";
-    }
-</script>
+    <div id="chat-container">
+        <div id="loading">Cargando el chat...</div>
+        <iframe 
+            src="https://kiwiirc.com/nextclient/irc.libera.chat:+6697/?nick=Hispano?#hispanos"
+            onload="document.getElementById('loading').style.display='none';">
+        </iframe>
+    </div>
 
 </body>
 </html>
+ 
