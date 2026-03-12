@@ -3,13 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Chat Kiwi Lindo</title>
+    <title>Kiwi Chat Premium ✨</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #ffffff; }
-        iframe { width: 100%; height: 100%; border: none; }
+        /* Diseño chido y moderno */
+        body, html { 
+            margin: 0; padding: 0; height: 100%; width: 100%; 
+            font-family: 'Segoe UI', sans-serif; 
+            background: linear-gradient(135deg, #1d976c 0%, #93f9b9 100%); /* Fondo verde Kiwi */
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+
+        /* Barra superior de Creadora */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #93f9b9;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        /* Contenedor del Chat */
+        #chat-wrapper {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Lobby de bienvenida */
+        #lobby {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: white;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            z-index: 20;
+            transition: opacity 0.5s ease;
+        }
+
+        .btn-entrar {
+            background: #1d976c;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(29, 151, 108, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-entrar:hover { transform: scale(1.1); background: #167d58; }
     </style>
 </head>
 <body>
-    <iframe src="https://kiwiirc.com/client/irc.kiwiirc.com/?#amistad"></iframe>
+
+<header>
+    🌟 BIENVENIDOS AL CHAT DE LOS HISPANOS 🌟
+</header>
+
+<div id="chat-wrapper">
+    <div id="lobby" id="lobby">
+        <h1 style="color: #1d976c;">🥝 Kiwi Social Club</h1>
+        <p>Conéctate, crea salas y chatea en privado.</p>
+        <button class="btn-entrar" onclick="entrarAlChat()">ENTRAR AL LOBBY</button>
+    </div>
+
+    <iframe id="kiwiFrame" src=""></iframe>
+</div>
+
+<script>
+    function entrarAlChat() {
+        // Ocultar el lobby
+        document.getElementById('lobby').style.display = 'none';
+        
+        // Cargar el servidor original de Kiwi (estable y con salas)
+        // Este link te conecta a la red oficial donde puedes crear tus propias salas
+        document.getElementById('kiwiFrame').src = "https://kiwiirc.com/nextclient/?settings=9a0994cc9e71f544528186177579f64e#lobby,#amistad,#ayuda";
+    }
+</script>
+
 </body>
 </html>
