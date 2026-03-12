@@ -5,18 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat de los Hispanos 🌟</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #1a1a1a; }
-        .header {
-            background: #1d976c; color: white; padding: 10px; text-align: center;
-            font-family: sans-serif; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        body {
+            margin: 0; padding: 0; height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            background: radial-gradient(circle, #1d976c 0%, #072a1e 100%);
+            color: white; font-family: 'Segoe UI', sans-serif; text-align: center;
         }
-        #chat-frame { width: 100%; height: calc(100% - 40px); border: none; }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid #93f9b9;
+        }
+        h1 { margin-bottom: 10px; font-size: 1.8rem; }
+        p { margin-bottom: 30px; opacity: 0.9; }
+        
+        .btn-entrar {
+            display: inline-block;
+            background: #93f9b9; color: #072a1e;
+            padding: 15px 40px; font-size: 1.3rem; font-weight: bold;
+            text-decoration: none; border-radius: 50px;
+            transition: 0.3s; box-shadow: 0 5px 15px rgba(147, 249, 185, 0.4);
+        }
+        .btn-entrar:hover {
+            transform: scale(1.1); background: #ffffff;
+        }
     </style>
 </head>
 <body>
-    <div class="header">🌟 BIENVENIDOS AL CHAT DE LOS HISPANOS 🌟</div>
-    
-    <iframe id="chat-frame" src="https://kiwiirc.com/client/irc.kiwiirc.com/?#hispanos"></iframe>
+
+    <div class="container">
+        <h1>🌟 BIENVENIDOS AL CHAT 🌟</h1>
+        <p>Presiona el botón para entrar a la comunidad de los Hispanos.</p>
+        
+        <a href="https://kiwiirc.com/nextclient/irc.kiwiirc.com/#hispanos" target="_blank" class="btn-entrar">
+            ENTRAR AHORA 🚀
+        </a>
+    </div>
+
 </body>
 </html>
- 
